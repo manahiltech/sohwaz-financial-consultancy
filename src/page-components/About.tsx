@@ -1,150 +1,224 @@
 import React from 'react';
-import Link from 'next/link';
-import { ArrowRightIcon } from 'lucide-react';
+import Image from 'next/image';
 import { PageBanner } from '../components/PageBanner';
 import { SectionHeading } from '../components/SectionHeading';
-import { ServiceIcon } from '../components/ServiceIcon';
-import { ProcessSteps } from '../components/ProcessSteps';
-import { MarketList } from '../components/MarketList';
 import { ConsultationCTA } from '../components/ConsultationCTA';
-import { Button } from '../components/Button';
 import { Reveal } from '../components/Reveal';
-import { services } from '../data/services';
-import { advisoryApproach, leaders, mission, principles, vision } from '../data/company';
+import {
+  LandmarkIcon,
+  BriefcaseIcon,
+  FlameIcon,
+  ShieldCheckIcon,
+  CompassIcon,
+} from 'lucide-react';
 import { images } from '../data/images';
 
 export function About() {
   return (
     <>
       <PageBanner
-        title="Independent advice for the decisions that shape a balance sheet."
-        lead="Sohwaz Holdings advises corporates, investors and institutions across major markets."
+        title="About Us"
+        lead="Strategic financial and investment advisory led by seasoned executive leadership."
         crumbs={[{ label: 'Home', to: '/' }, { label: 'About Us' }]}
-        image={images.architecture} />
-      
+        image={images.architecture}
+      />
 
-      <section className="section">
-        <div className="container-site grid gap-12 lg:grid-cols-12 lg:gap-16">
-          <div className="lg:col-span-5">
-            <SectionHeading title="Company overview" />
-          </div>
-          <Reveal className="space-y-5 text-[17px] leading-relaxed text-muted lg:col-span-7">
-            <p className="text-xl leading-relaxed text-ink-950">
-              We are a financial and investment advisory firm built on a simple premise: important financial decisions
-              deserve independent, well-reasoned advice.
-            </p>
-            <p>
-              Our clients include family businesses, corporate groups, private investors and holding companies. They
-              come to us when the stakes are high — restructuring a treasury function, raising new facilities,
-              reviewing a portfolio, or preparing for regulatory change.
-            </p>
-            <p>
-              We combine experience from banking, corporate finance and investment management with a working knowledge
-              of how business is done. Our role is to advise and support; decisions always remain with our
-              clients.
-            </p>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="bg-mist py-20 md:py-24">
-        <div className="container-site grid gap-px overflow-hidden rounded-2xl bg-line md:grid-cols-2">
-          {[
-          { label: 'Our mission', text: mission },
-          { label: 'Our vision', text: vision }].
-          map((b) =>
-          <Reveal key={b.label} className="bg-white p-8 md:p-12">
-              <h2 className="font-display text-sm font-bold text-gold-700">{b.label}</h2>
-              <p className="mt-4 font-display text-2xl font-semibold leading-snug tracking-[-0.015em] text-ink-950 md:text-[28px]">
-                {b.text}
-              </p>
+      {/* Executive Profile Section */}
+      <section className="section bg-white">
+        <div className="container-site">
+          <div className="grid items-start gap-12 lg:grid-cols-12 lg:gap-16">
+            {/* CEO Photo Column */}
+            <Reveal className="lg:col-span-5">
+              <div className="relative overflow-hidden rounded-2xl border border-line bg-mist shadow-lift">
+                <div className="relative aspect-[4/5] w-full">
+                  <Image
+                    src={images.ceoPhoto}
+                    alt="Sohail Nawaz — Founder & CEO of Sohwaz Financial Consultants"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 40vw"
+                    priority
+                    className="h-full w-full object-cover object-top"
+                  />
+                </div>
+                <div className="p-6 bg-white border-t border-line">
+                  <h3 className="font-display text-2xl font-bold text-ink-950">
+                    Sohail Nawaz
+                  </h3>
+                  <p className="mt-1 font-display text-sm font-bold tracking-wide uppercase text-gold-700">
+                    Founder & CEO
+                  </p>
+                </div>
+              </div>
             </Reveal>
-          )}
-        </div>
-      </section>
 
-      <section className="section">
-        <div className="container-site">
-          <SectionHeading title="Areas of expertise" lead="Six disciplines, applied individually or together depending on the decision." />
-          <ul className="mt-12 grid gap-x-10 sm:grid-cols-2 lg:grid-cols-2">
-            {services.map((s) =>
-            <li key={s.slug} className="border-t border-line">
-                <Link href={`/services/${s.slug}`} className="group flex items-start gap-4 py-6">
-                  <span className="mt-0.5 text-ink-800">
-                    <ServiceIcon icon={s.icon} />
-                  </span>
-                  <span className="flex-1">
-                    <span className="block font-display font-bold text-ink-950 group-hover:underline group-hover:decoration-gold-400 group-hover:decoration-2 group-hover:underline-offset-4">
-                      {s.title}
-                    </span>
-                    <span className="mt-1 block text-sm leading-relaxed text-muted">{s.summary}</span>
-                  </span>
-                </Link>
-              </li>
-            )}
-          </ul>
-        </div>
-      </section>
-
-      <section className="section bg-ink-950">
-        <div className="container-site">
-          <SectionHeading onDark title="Advisory principles" lead="The standards that govern how we work with every client." />
-          <dl className="mt-12 grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-            {principles.map((p, i) =>
-            <Reveal key={p.title} delay={i * 0.04} className="border-t border-white/15 pt-6">
-                <dt className="font-display text-lg font-bold text-white">{p.title}</dt>
-                <dd className="mt-2 text-[15px] leading-relaxed text-white/70">{p.description}</dd>
+            {/* Executive Bio Text */}
+            <div className="space-y-6 lg:col-span-7">
+              <Reveal>
+                <span className="font-display text-xs font-bold uppercase tracking-[0.2em] text-gold-700">
+                  Leadership Profile
+                </span>
+                <h2 className="mt-2 font-display text-3xl font-bold leading-tight text-ink-950 md:text-4xl">
+                  Visionary C-Suite Leader & Profitability Architect
+                </h2>
               </Reveal>
-            )}
-          </dl>
-        </div>
-      </section>
 
-      {/* <section className="section">
-        <div className="container-site">
-          <SectionHeading title="Regional focus" lead="We advise across selected markets, allowing depth rather than breadth." />
-          <div className="mt-12">
-            <MarketList />
-          </div>
-        </div>
-      </section> */}
-
-      <section className="section bg-mist">
-        <div className="container-site">
-          <SectionHeading title="Our working approach" lead="Structured enough to be rigorous, flexible enough to fit how your organisation works." />
-          <div className="mt-14">
-            <ProcessSteps steps={advisoryApproach} />
-          </div>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="container-site grid items-center gap-12 lg:grid-cols-12">
-          <div className="lg:col-span-6">
-            <SectionHeading
-              title="Led by experienced professionals"
-              lead="Our management team brings senior experience across banking, treasury, investment, risk and real estate — and remains directly involved in client work." />
-            
-            <div className="mt-8">
-              <Button href="/management" variant="dark">
-                Meet the management team
-              </Button>
+              <Reveal delay={0.05} className="space-y-5 text-[17px] leading-relaxed text-muted">
+                <p>
+                  With over <strong className="font-semibold text-ink-950">35 years of distinguished leadership across the banking, investment, and energy sectors</strong>, this executive brings a rare blend of institutional financial sophistication and hands-on operational excellence. Throughout a stellar career spanning global Treasury, Financial Institutions Groups (FIG), and Capital Markets—culminating in a transformative tenure as an Oil & Gas Chief Financial Officer—they have consistently translated complex financial engineering into aggressive bottom-line growth, engineering high profitability and structural resilience for complex business entities.
+                </p>
+                <p>
+                  A distinguished financial executive with an extensive track record of leadership across the <strong className="font-semibold text-ink-950">GCC’s banking, investment, and energy sectors</strong>, with deep localized expertise in <strong className="font-semibold text-ink-950">Kuwait, Qatar, and Bahrain</strong>. Demonstrated success navigating complex corporate environments, ranging from tier-1 sovereign financial institutions to state-backed energy infrastructure. Career highlights include directing capital markets and treasury strategies for major financial groups, alongside serving as the <strong className="font-semibold text-ink-950">Chief Financial Officer (CFO) for a leading oil and gas company in State of Kuwait</strong>.
+                </p>
+              </Reveal>
             </div>
           </div>
-          <ul className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:col-span-6">
-            {leaders.map((l) =>
-            <li key={l.role} className="text-center">
-                <div className="mx-auto flex aspect-square w-full items-center justify-center rounded-xl border border-dashed border-ink-600/25 bg-mist text-[11px] text-muted">
-                  [Photo]
-                </div>
-                <p className="mt-3 text-[13px] font-semibold leading-snug text-ink-950">{l.role}</p>
-              </li>
-            )}
-          </ul>
+        </div>
+      </section>
+
+      {/* Core Sectors & Executed Capabilities */}
+      <section className="section bg-mist">
+        <div className="container-site">
+          <SectionHeading
+            title="Core Sectors & Executed Capabilities"
+            lead="Proven executive execution across tier-1 financial institutions, sovereign wealth entities, and large-scale energy infrastructure."
+          />
+
+          <div className="mt-14 grid gap-8 lg:grid-cols-3">
+            {/* Sector 1: Banking & Financial Institutions */}
+            <Reveal className="h-full rounded-2xl border border-line bg-white p-8 shadow-soft">
+              <div className="flex items-center gap-3">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gold-100 text-gold-700">
+                  <LandmarkIcon className="h-6 w-6" />
+                </span>
+                <h3 className="font-display text-xl font-bold text-ink-950">
+                  Banking & Financial Institutions
+                </h3>
+              </div>
+              <ul className="mt-6 space-y-4 divide-y divide-line text-[14px] leading-relaxed text-muted">
+                <li className="pt-2">
+                  <strong className="block font-semibold text-ink-950">
+                    Treasury & Asset-Liability Management:
+                  </strong>
+                  Directed Treasury operations, optimized Asset-Liability Committee (ALCO) strategies, and managed asset-liability frameworks (ALM) for regional commercial, investment, and tier-1 sovereign banking institutions.
+                </li>
+                <li className="pt-4">
+                  <strong className="block font-semibold text-ink-950">
+                    Financial Institutions Group (FIG) & Capital Markets:
+                  </strong>
+                  Spearheaded institutional relationships, structured cross-border financial transactions, and executed sophisticated capital markets initiatives across the GCC.
+                </li>
+                <li className="pt-4">
+                  <strong className="block font-semibold text-ink-950">
+                    Regulatory Alignment & GRC:
+                  </strong>
+                  Designed and implemented proportionate Governance, Risk, and Compliance (GRC) frameworks that successfully bridged international standards with Central Bank requirements, adhering strictly to <strong className="font-medium text-ink-900">CBK (Kuwait), QCB (Qatar), and CBB (Bahrain)</strong> guidelines.
+                </li>
+                <li className="pt-4">
+                  <strong className="block font-semibold text-ink-950">
+                    Islamic Finance Integration:
+                  </strong>
+                  Navigated and managed Sharia-compliant banking operations, ensuring seamless execution within the region&apos;s dual-banking systems.
+                </li>
+              </ul>
+            </Reveal>
+
+            {/* Sector 2: Investment Firms & Sovereign Wealth */}
+            <Reveal delay={0.06} className="h-full rounded-2xl border border-line bg-white p-8 shadow-soft">
+              <div className="flex items-center gap-3">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gold-100 text-gold-700">
+                  <BriefcaseIcon className="h-6 w-6" />
+                </span>
+                <h3 className="font-display text-xl font-bold text-ink-950">
+                  Investment Firms & Sovereign Wealth
+                </h3>
+              </div>
+              <ul className="mt-6 space-y-4 divide-y divide-line text-[14px] leading-relaxed text-muted">
+                <li className="pt-2">
+                  <strong className="block font-semibold text-ink-950">
+                    Institutional Portfolio Advisory:
+                  </strong>
+                  Provided non-discretionary portfolio management, advanced risk analytics, and strategic asset allocation models for prominent regional investment companies and family offices.
+                </li>
+                <li className="pt-4">
+                  <strong className="block font-semibold text-ink-950">
+                    Real Estate Underwriting:
+                  </strong>
+                  Delivered rigorous, independent financial assessments and risk underwriting for high-value acquisitions and income-producing portfolios across regional and international property markets.
+                </li>
+              </ul>
+            </Reveal>
+
+            {/* Sector 3: Oil & Gas (Energy Infrastructure) */}
+            <Reveal delay={0.12} className="h-full rounded-2xl border border-line bg-white p-8 shadow-soft">
+              <div className="flex items-center gap-3">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gold-100 text-gold-700">
+                  <FlameIcon className="h-6 w-6" />
+                </span>
+                <h3 className="font-display text-xl font-bold text-ink-950">
+                  Oil & Gas (Energy Infrastructure)
+                </h3>
+              </div>
+              <ul className="mt-6 space-y-4 divide-y divide-line text-[14px] leading-relaxed text-muted">
+                <li className="pt-2">
+                  <strong className="block font-semibold text-ink-950">
+                    CFO Leadership & Capital Advisory:
+                  </strong>
+                  Served as the <strong className="font-medium text-ink-900">Chief Financial Officer (CFO) for a leading oil and gas company in Kuwait</strong>, providing corporate financial governance, strategic leadership, and sophisticated CapEx optimization for large-scale energy infrastructure.
+                </li>
+                <li className="pt-4">
+                  <strong className="block font-semibold text-ink-950">
+                    Margin & Revenue Engineering:
+                  </strong>
+                  Deploying commodity risk-mitigation strategies, orchestrating corporate restructurings, and leading high-stakes lender negotiations to maximize profitability.
+                </li>
+              </ul>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Core Values */}
+      <section className="section bg-ink-950 text-white">
+        <div className="container-site">
+          <SectionHeading
+            onDark
+            title="Core Values"
+            lead="Guiding standards that govern every advisory mandate and institutional client relationship."
+          />
+
+          <div className="mt-14 grid gap-8 md:grid-cols-2">
+            <Reveal className="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur md:p-10">
+              <div className="flex items-center gap-3">
+                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold-400/20 text-gold-300">
+                  <ShieldCheckIcon className="h-6 w-6" />
+                </span>
+                <h3 className="font-display text-2xl font-bold text-white">
+                  Discretion & Compliance
+                </h3>
+              </div>
+              <p className="mt-6 text-[16px] leading-relaxed text-white/75">
+                We maintain the highest standards of professional confidentiality, handling all client data, corporate structures, and proprietary insights with absolute discretion. Our engagement frameworks are explicitly designed to secure your sensitive information in strict accordance with applicable legal, fiduciary, and regulatory reporting requirements.
+              </p>
+            </Reveal>
+
+            <Reveal delay={0.06} className="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur md:p-10">
+              <div className="flex items-center gap-3">
+                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold-400/20 text-gold-300">
+                  <CompassIcon className="h-6 w-6" />
+                </span>
+                <h3 className="font-display text-2xl font-bold text-white">
+                  Strategic Clarity & Client Sovereignty
+                </h3>
+              </div>
+              <p className="mt-6 text-[16px] leading-relaxed text-white/75">
+                We eliminate operational ambiguity by delivering plain-language financial assessments and transparent risk analysis. While we provide the strategic blueprints, <strong className="font-semibold text-white">all ultimate corporate decisions and implementation actions rest solely with the Client</strong>. Our advisory services constitute guidance only, and execution carries no legal or financial recourse to our firm, its advisors, or its entities.
+              </p>
+            </Reveal>
+          </div>
         </div>
       </section>
 
       <ConsultationCTA />
-    </>);
-
+    </>
+  );
 }

@@ -15,8 +15,23 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Sohwaz",
-  description: "Sohwaz Holdings",
+  metadataBase: new URL("https://sohwaz.com"),
+  title: {
+    default: "Sohwaz Financial Consultants",
+    template: "%s | Sohwaz Financial Consultants",
+  },
+  description:
+    "Strategic financial and investment advisory for corporates, investors, and institutions across the Middle East and Pakistan.",
+  openGraph: {
+    title: "Sohwaz Financial Consultants",
+    description:
+      "Strategic financial and investment advisory for corporates, investors, and institutions across the Middle East and Pakistan.",
+    images: [{ url: "/assets/og-image.jpg", width: 1200, height: 630, alt: "Sohwaz Financial Consultants" }],
+    siteName: "Sohwaz Financial Consultants",
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

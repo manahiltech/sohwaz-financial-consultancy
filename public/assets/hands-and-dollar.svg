@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" width="100%" height="100%" fill="none" aria-hidden="true">
+  <defs>
+    <!-- Brand Gold Gradients -->
+    <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDF6E2" />
+      <stop offset="40%" stop-color="#F5CF5C" />
+      <stop offset="70%" stop-color="#F2BE2C" />
+      <stop offset="100%" stop-color="#B8860B" />
+    </linearGradient>
+    <linearGradient id="gold-stroke" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.4" />
+      <stop offset="50%" stop-color="#F5CF5C" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#FFF2A3" stop-opacity="0.95" />
+    </linearGradient>
+    <radialGradient id="center-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F2BE2C" stop-opacity="0.25" />
+      <stop offset="60%" stop-color="#E0A91B" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#060B16" stop-opacity="0" />
+    </radialGradient>
+    <filter id="subtle-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- Single Hand Definition in local coords (center at 0,0, cupping inwards from bottom) -->
+    <g id="cupped-hand">
+      <!-- Wrist and forearm -->
+      <path d="M -18 85 C -15 65, -22 45, -28 32 C -32 24, -30 18, -24 16 C -18 14, -12 22, -6 28 C -2 18, 4 10, 10 10 C 14 10, 16 14, 14 20 C 18 14, 24 12, 28 14 C 32 16, 30 24, 25 32 C 20 40, 18 55, 20 85"
+            stroke="url(#gold-stroke)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.9" />
+      <!-- Inner palm gesture lines -->
+      <path d="M -16 42 C -10 46, -4 48, 4 45 C 10 42, 14 36, 16 30"
+            stroke="url(#gold-grad)" stroke-width="1.75" stroke-linecap="round" fill="none" opacity="0.75" />
+      <path d="M -8 56 C -2 58, 6 56, 12 50"
+            stroke="url(#gold-grad)" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.5" />
+      <!-- Finger tips highlighting -->
+      <circle cx="-25" cy="18" r="2" fill="#FDF6E2" opacity="0.8" />
+      <circle cx="9" cy="11" r="2" fill="#FDF6E2" opacity="0.8" />
+      <circle cx="27" cy="15" r="2" fill="#FDF6E2" opacity="0.8" />
+    </g>
+  </defs>
+
+  <!-- Ambient Golden Center Backdrop Glow -->
+  <circle cx="160" cy="160" r="135" fill="url(#center-glow)" />
+
+  <!-- Outer orbital rings -->
+  <circle cx="160" cy="160" r="148" stroke="#F5CF5C" stroke-width="1" stroke-dasharray="4 8" opacity="0.25" />
+  <circle cx="160" cy="160" r="128" stroke="#F2BE2C" stroke-width="1.5" opacity="0.35" />
+  <circle cx="160" cy="160" r="102" stroke="#FFF" stroke-width="0.75" stroke-dasharray="2 6" opacity="0.2" />
+
+  <!-- The Three Hands arranged at 0°, 120°, 240° around center (160, 160) -->
+  <g transform="translate(160, 160)">
+    <!-- Hand 1: Top (rotated 0deg) -->
+    <g transform="rotate(0)">
+      <use href="#cupped-hand" />
+    </g>
+    <!-- Hand 2: Bottom Right (rotated 120deg) -->
+    <g transform="rotate(120)">
+      <use href="#cupped-hand" />
+    </g>
+    <!-- Hand 3: Bottom Left (rotated 240deg) -->
+    <g transform="rotate(240)">
+      <use href="#cupped-hand" />
+    </g>
+
+    <!-- Small accent jewels/connectors at 60deg, 180deg, 300deg -->
+    <circle cx="0" cy="-128" r="3.5" fill="#F5CF5C" filter="url(#subtle-glow)" />
+    <circle cx="110.85" cy="64" r="3.5" fill="#F5CF5C" filter="url(#subtle-glow)" />
+    <circle cx="-110.85" cy="64" r="3.5" fill="#F5CF5C" filter="url(#subtle-glow)" />
+
+    <!-- Central Dollar Emblem -->
+    <!-- Inner disc for dollar sign -->
+    <circle cx="0" cy="0" r="36" fill="#060B16" stroke="url(#gold-stroke)" stroke-width="2.5" />
+    <circle cx="0" cy="0" r="30" stroke="#F5CF5C" stroke-width="1" stroke-dasharray="3 3" opacity="0.6" />
+
+    <!-- Dollar Sign ($) -->
+    <g filter="url(#subtle-glow)">
+      <!-- Vertical bar -->
+      <line x1="0" y1="-23" x2="0" y2="23" stroke="url(#gold-grad)" stroke-width="3" stroke-linecap="round" />
+      <!-- Dollar S curves -->
+      <path d="M 11 -12 C 11 -18, -11 -18, -11 -7 C -11 3, 11 0, 11 10 C 11 20, -11 21, -11 14"
+            stroke="url(#gold-grad)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    </g>
+  </g>
+</svg>
+

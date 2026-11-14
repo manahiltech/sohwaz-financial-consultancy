@@ -3,5 +3,5 @@ import { LegalPage } from '../components/LegalPage';
 import { privacySections } from '../data/legal';
 
 export function Privacy() {
-  return <LegalPage title="Privacy Policy" updated="[Date]" sections={privacySections} />;
+  return <LegalPage title="Privacy Policy" updated="November 2026" sections={privacySections} />;
 }

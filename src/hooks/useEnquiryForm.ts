@@ -5,7 +5,7 @@ export type EnquiryValues = {
   name: string;
   company: string;
   email: string;
-  phone: string;
+  phone?: string;
   service: string;
   message: string;
   consent: boolean;
@@ -19,11 +19,13 @@ const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 export function validateEnquiry(v: EnquiryValues): EnquiryErrors {
   const errors: EnquiryErrors = {};
   if (!v.name.trim()) errors.name = 'Please enter your full name.';
-  if (!v.email.trim()) errors.email = 'Please enter your email address.';else
-  if (!emailPattern.test(v.email)) errors.email = 'Please enter a valid email address.';
-  if (v.phone && !/^[+\d\s()-]{7,}$/.test(v.phone)) errors.phone = 'Please enter a valid phone number.';
+  if (!v.email.trim()) {
+    errors.email = 'Please enter your work email.';
+  } else if (!emailPattern.test(v.email)) {
+    errors.email = 'Please enter a valid email address.';
+  }
   if (!v.service) errors.service = 'Please select a service of interest.';
-  if (v.message.trim().length < 20) errors.message = 'Please share a little more detail (at least 20 characters).';
+  if (v.message.trim().length < 15) errors.message = 'Please share a little more detail (at least 15 characters).';
   if (!v.consent) errors.consent = 'Please confirm consent so we can respond to your enquiry.';
   return errors;
 }
@@ -36,7 +38,7 @@ export function useEnquiryForm(defaultService = '') {
     phone: '',
     service: defaultService,
     message: '',
-    consent: false
+    consent: false,
   };
   const [values, setValues] = useState<EnquiryValues>(initial);
   const [errors, setErrors] = useState<EnquiryErrors>({});
@@ -44,7 +46,7 @@ export function useEnquiryForm(defaultService = '') {
   const [submitError, setSubmitError] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
-  const update = <K extends keyof EnquiryValues,>(key: K, value: EnquiryValues[K]) => {
+  const update = <K extends keyof EnquiryValues>(key: K, value: EnquiryValues[K]) => {
     const next = { ...values, [key]: value };
     setValues(next);
     if (submitted) setErrors(validateEnquiry(next));
@@ -69,7 +71,7 @@ export function useEnquiryForm(defaultService = '') {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(values),
       });
-      const result = await response.json() as {error?: string};
+      const result = (await response.json()) as { error?: string };
 
       if (!response.ok) {
         setSubmitError(result.error ?? 'Unable to send your enquiry right now.');

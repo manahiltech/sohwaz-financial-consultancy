@@ -38,8 +38,8 @@ export const services: Service[] = [
   intro:
   'We help investors and owners evaluate property decisions with the same rigour applied to any other capital allocation.',
   overview: [
-  'Real estate remains one of the most significant asset classes for investors in Kuwait, the UAE and Bahrain. Decisions are often large, illiquid and long-dated, which makes independent analysis essential.',
-  'Sohwaz Holdings advises on acquisition and disposal decisions, development feasibility, portfolio positioning and financing structures, working alongside valuers, legal counsel and lenders.'],
+  'Real estate remains one of the most significant asset classes for investors in the Middle East and Pakistan. Decisions are often large, illiquid and long-dated, which makes independent analysis essential.',
+  'Sohwaz Financial Consultants advises on acquisition and disposal decisions, development feasibility, portfolio positioning and financing structures, working alongside valuers, legal counsel and lenders.'],
 
   scope: [
   { title: 'Acquisition due diligence', description: 'Financial review of target assets, income profiles and key risks.' },
@@ -60,7 +60,7 @@ export const services: Service[] = [
 
   faqs: [
   { question: 'Do you act as a broker or agent?', answer: 'No. Our role is advisory. We do not receive commissions on transactions, which allows us to give an independent view.' },
-  { question: 'Do you advise on property outside your core markets?', answer: 'Our focus is Kuwait, the UAE and Bahrain. We can discuss cross-border holdings where they form part of a regional client’s wider portfolio.' },
+  { question: 'Do you advise on property outside your core markets?', answer: 'Our focus is the Middle East and Pakistan. We can discuss cross-border holdings where they form part of a regional client’s wider portfolio.' },
   { question: 'Can you work with our existing valuer?', answer: 'Yes. We typically work alongside appointed valuers, lawyers and lenders rather than replacing them.' }]
 
 },
@@ -74,7 +74,7 @@ export const services: Service[] = [
   'We help finance teams build treasury functions that are disciplined, visible and resilient — from daily liquidity to long-term funding strategy.',
   overview: [
   'Treasury sits at the centre of every financial decision a business makes. Yet in many organisations across the region, cash is spread across multiple banks and entities, currency exposures are managed reactively, and treasury policy has not kept pace with growth.',
-  'Sohwaz Holdings advises CFOs, treasurers and boards on how to structure and strengthen the treasury function. We review current arrangements, identify gaps in visibility and control, and recommend practical improvements suited to the banking and regulatory environment in Kuwait, the UAE and Bahrain.',
+  'Sohwaz Financial Consultants advises CFOs, treasurers and boards on how to structure and strengthen the treasury function. We review current arrangements, identify gaps in visibility and control, and recommend practical improvements suited to the banking and regulatory environment in the Middle East and Pakistan.',
   'Our role is advisory. We support your team in making informed decisions, and we work alongside your existing banks, auditors and legal counsel.'],
 
   scope: [
@@ -109,7 +109,7 @@ export const services: Service[] = [
   { question: 'Do we need a dedicated treasury team to benefit?', answer: 'No. Many of our clients manage treasury within a small finance team. We scale recommendations to your organisation and resources.' },
   { question: 'Do you recommend specific banks or products?', answer: 'We provide an independent view of your banking arrangements. We do not receive referral fees from banks, and any product decisions remain with you.' },
   { question: 'How long does a treasury review take?', answer: 'A focused diagnostic typically takes several weeks depending on the number of entities, banks and the availability of information. We agree the timeline at the outset.' },
-  { question: 'Can you support us across more than one country?', answer: 'Yes. We regularly consider structures that span Kuwait, the UAE and Bahrain, taking account of local banking practice and regulatory requirements.' },
+  { question: 'Can you support us across more than one country?', answer: 'Yes. We regularly consider structures that span the Middle East and Pakistan, taking account of local banking practice and regulatory requirements.' },
   { question: 'Will our information be kept confidential?', answer: 'Yes. Engagements are conducted under confidentiality terms, and information is used only for the purpose of the engagement.' }]
 
 },
@@ -223,7 +223,7 @@ export const services: Service[] = [
   title: 'Regulatory Compliance & Risk Advisory',
   icon: 'compliance',
   summary:
-  'Supporting governance, risk frameworks and regulatory readiness across Kuwaiti, Emirati and Bahraini jurisdictions.',
+  'Supporting governance, risk frameworks and regulatory readiness across regional jurisdictions.',
   intro:
   'We help organisations build proportionate risk and compliance frameworks that support growth rather than slow it.',
   overview: [
@@ -249,7 +249,7 @@ export const services: Service[] = [
 
   faqs: [
   { question: 'Do you provide legal advice?', answer: 'No. We provide risk and compliance advisory support and work alongside your legal counsel where legal interpretation is required.' },
-  { question: 'Which regulators do you consider?', answer: 'We consider the requirements relevant to your sector and jurisdiction across Kuwait, the UAE and Bahrain, confirmed during scoping.' },
+  { question: 'Which regulators do you consider?', answer: 'We consider the requirements relevant to your sector and jurisdiction across the Middle East and Pakistan, confirmed during scoping.' },
   { question: 'Can you support an internal audit function?', answer: 'Yes. We can help design risk-based review programmes and support internal teams.' }]
 
 },
