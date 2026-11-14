@@ -1,0 +1,68 @@
+@config "../../tailwind.config.js";
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+body {
+  @apply bg-white text-body antialiased;
+  font-family: var(--font-inter), sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+.desktop-consultation {
+  display: none;
+}
+@media (min-width: 1280px) {
+  .desktop-consultation {
+    display: inline-flex;
+  }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-manrope), sans-serif;
+}
+.container-site {
+  @apply mx-auto w-full max-w-site px-5 md:px-8 lg:px-12;
+}
+.section {
+  @apply py-20 md:py-24 lg:py-28;
+}
+.jade-marble {
+  background:
+    radial-gradient(circle at 18% 22%, rgba(116, 190, 166, 0.4), transparent 28%),
+    radial-gradient(circle at 82% 68%, rgba(18, 83, 69, 0.8), transparent 34%),
+    linear-gradient(125deg, #0d3b35 0%, #1c6657 48%, #082d29 100%);
+}
+.currency-float {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid currentColor;
+  border-radius: 9999px;
+  width: 3.5rem;
+  height: 3.5rem;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  opacity: 0.62;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+}
+.currency-usd { top: 16%; right: 12%; color: #fff; background: linear-gradient(135deg, rgba(35, 75, 150, 0.7), rgba(185, 45, 54, 0.58)); }
+.currency-eur { top: 38%; right: 28%; color: #f6d85b; background: rgba(31, 74, 153, 0.72); }
+.currency-jpy { top: 20%; right: 34%; color: #d33b46; background: rgba(255, 255, 255, 0.78); }
+.currency-cad { bottom: 20%; right: 16%; color: #fff; background: linear-gradient(90deg, rgba(197, 45, 55, 0.76), rgba(255, 255, 255, 0.28), rgba(197, 45, 55, 0.76)); }
+.currency-kwd { bottom: 16%; right: 35%; color: #fff; background: linear-gradient(160deg, rgba(22, 111, 73, 0.78), rgba(0, 0, 0, 0.3) 52%, rgba(201, 49, 56, 0.7)); }
+.currency-gbp { bottom: 34%; right: 8%; color: #fff; background: linear-gradient(135deg, rgba(30, 59, 126, 0.78), rgba(190, 45, 56, 0.62)); }
+.currency-chf { top: 57%; right: 42%; color: #d33b46; background: rgba(255, 255, 255, 0.78); }
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
