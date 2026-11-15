@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { HomeHero } from '../components/home/HomeHero';
 import { SectionHeading } from '../components/SectionHeading';
 import { ServiceCard } from '../components/ServiceCard';
@@ -10,6 +11,7 @@ import { Button } from '../components/Button';
 import { Reveal } from '../components/Reveal';
 import { DataLines } from '../components/DataLines';
 import { HeroDashboard } from '../components/HeroDashboard';
+import { CardGrid } from '../components/CardGrid';
 import { services } from '../data/services';
 import { audiences, advisoryApproach } from '../data/company';
 import { images } from '../data/images';
@@ -20,21 +22,18 @@ export function Home() {
       {/* 1. Hero with Rotating Globe & Orbiting Currencies */}
       <HomeHero />
 
-      {/* 2. Group Liquidity Overview (Kept intact with [Value] placeholders as required) */}
-      <section className="border-b border-line bg-mist/60 py-12 md:py-16">
-        <div className="container-site max-w-4xl">
-          <HeroDashboard />
-        </div>
-      </section>
+      
 
       {/* 3. Market Advisory Intro */}
       <section className="section">
         <div className="container-site grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
           <Reveal className="lg:col-span-6">
             <div className="aspect-[4/3] overflow-hidden rounded-2xl shadow-soft">
-              <img
+              <Image
                 src={images.boardroom}
                 alt="Corporate conference room overlooking international financial district"
+                width={960}
+                height={720}
                 className="h-full w-full object-cover"
               />
             </div>
@@ -73,13 +72,13 @@ export function Home() {
               </Button>
             </div>
           </div>
-          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <CardGrid className="mt-12">
             {services.map((s, i) => (
-              <Reveal key={s.slug} delay={i * 0.04}>
+              <Reveal key={s.slug} delay={i * 0.04} className="h-full">
                 <ServiceCard service={s} />
               </Reveal>
             ))}
-          </div>
+          </CardGrid>
         </div>
       </section>
 
@@ -90,13 +89,13 @@ export function Home() {
             title="Who we advise"
             lead="We work with organisations and individuals whose decisions carry long-term financial consequences."
           />
-          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <CardGrid columns={4} className="mt-12">
             {audiences.map((a, i) => (
-              <Reveal key={a.title} delay={i * 0.05}>
+              <Reveal key={a.title} delay={i * 0.05} className="h-full">
                 <AudienceCard audience={a} />
               </Reveal>
             ))}
-          </div>
+          </CardGrid>
         </div>
       </section>
 
@@ -112,6 +111,13 @@ export function Home() {
           <div className="mt-14">
             <ProcessSteps steps={advisoryApproach} onDark />
           </div>
+        </div>
+      </section>
+
+      {/* 2. Group Liquidity Overview (Kept intact with [Value] placeholders as required) */}
+      <section className="border-b border-line bg-mist/60 py-12 md:py-16">
+        <div className="container-site max-w-4xl">
+          <HeroDashboard />
         </div>
       </section>
 

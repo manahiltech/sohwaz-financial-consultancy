@@ -1,6 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
-import { ArrowRightIcon, CheckIcon } from 'lucide-react';
+import { CheckIcon } from 'lucide-react';
 import { ServiceIcon } from './ServiceIcon';
 import type { Service } from '../types/content';
 
@@ -11,10 +10,7 @@ type ServiceCardProps = {
 
 export function ServiceCard({ service, detailed = false }: ServiceCardProps) {
   return (
-    <Link
-      href="/services"
-      className="group flex h-full flex-col rounded-xl border border-line bg-white p-7 transition-[border-color,box-shadow,transform] duration-200 ease-out hover:-translate-y-0.5 hover:border-ink-600/40 hover:shadow-lift focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-400"
-    >
+    <article className="group flex h-full flex-col rounded-2xl border border-line bg-white p-7 transition-[border-color,box-shadow,transform] duration-200 ease-out hover:-translate-y-1 hover:border-gold-400 hover:shadow-lift">
       <span className="flex h-11 w-11 items-center justify-center rounded-lg border border-line bg-mist text-ink-800 transition-colors duration-200 group-hover:border-gold-400 group-hover:bg-gold-100">
         <ServiceIcon icon={service.icon} />
       </span>
@@ -32,13 +28,6 @@ export function ServiceCard({ service, detailed = false }: ServiceCardProps) {
           ))}
         </ul>
       )}
-      <span className="mt-auto inline-flex items-center gap-1.5 pt-6 text-sm font-semibold text-ink-900">
-        Learn more
-        <ArrowRightIcon
-          className="h-4 w-4 transition-transform duration-200 ease-out group-hover:translate-x-1"
-          aria-hidden="true"
-        />
-      </span>
-    </Link>
+    </article>
   );
 }

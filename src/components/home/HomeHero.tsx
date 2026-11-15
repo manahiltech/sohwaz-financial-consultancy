@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Button } from '../Button';
 import { HeroGlobe } from './HeroGlobe';
@@ -19,7 +18,7 @@ export function HomeHero() {
   });
 
   return (
-    <section className="relative overflow-hidden bg-ink-950 text-white">
+    <section className="relative overflow-visible bg-ink-950 text-white">
       {/* Background radial gradients for depth */}
       <div
         className="pointer-events-none absolute -top-40 left-1/4 h-[550px] w-[550px] rounded-full bg-blue-900/20 blur-[130px]"
@@ -30,33 +29,11 @@ export function HomeHero() {
         aria-hidden="true"
       />
 
-      <div className="container-site relative grid items-center gap-10 py-16 sm:py-20 lg:grid-cols-12 lg:gap-8 lg:py-28">
-        {/* Left Column: Heading, Larger Logo, and CTAs */}
-        <div className="z-10 lg:col-span-6 xl:col-span-6">
-          {/* Prominent Logo on Home Page */}
-          <motion.div {...enter(0)} className="mb-8 flex items-center gap-4">
-            <div className="relative h-14 w-14 shrink-0 sm:h-16 sm:w-16">
-              <Image
-                src="/assets/eagle-logo.png"
-                alt="Sohwaz Financial Consultants"
-                width={128}
-                height={128}
-                priority
-                className="h-full w-full object-contain"
-              />
-            </div>
-            <div className="font-display leading-tight">
-              <span className="block text-2xl font-extrabold tracking-wide text-white sm:text-3xl">
-                SOHWAZ
-              </span>
-              <span className="block text-[11px] font-bold uppercase tracking-[0.24em] text-gold-300 sm:text-[12px]">
-                Financial Consultants
-              </span>
-            </div>
-          </motion.div>
-
+      <div className="container-site relative grid items-stretch gap-10 py-16 sm:py-20 lg:grid-cols-12 lg:gap-8 lg:py-28">
+        {/* Left Column: Heading and CTAs */}
+        <div className="z-10 lg:col-span-6 xl:col-span-6 flex flex-col justify-center">
           <motion.h1
-            {...enter(0.06)}
+            {...enter(0)}
             className="font-display text-[38px] font-bold leading-[1.06] tracking-[-0.03em] sm:text-5xl md:text-6xl lg:text-[62px]"
           >
             Independent advice for consequential decisions.
@@ -74,7 +51,7 @@ export function HomeHero() {
             className="mt-10 flex flex-wrap items-center gap-4"
           >
             <Button href="/contact" size="lg">
-              Request a consultation
+              Request a Consultation
             </Button>
             <Button href="/services" size="lg" variant="outlineDark">
               Explore our services
@@ -85,7 +62,7 @@ export function HomeHero() {
         {/* Right Column: The 3D Rotating Earth Globe with Orbiting Currencies */}
         <motion.div
           {...enter(0.22)}
-          className="relative flex items-center justify-center lg:col-span-6 xl:col-span-6"
+          className="relative hidden lg:block lg:col-span-6 xl:col-span-6 min-h-[320px] sm:min-h-[400px] lg:min-h-[420px]"
         >
           <HeroGlobe />
         </motion.div>

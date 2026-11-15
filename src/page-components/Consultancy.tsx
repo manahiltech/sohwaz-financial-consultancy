@@ -16,6 +16,7 @@ import {
   HeadphonesIcon,
 } from 'lucide-react';
 import { images } from '../data/images';
+import { CardGrid } from '../components/CardGrid';
 
 const practices = [
   {
@@ -84,7 +85,6 @@ export function Consultancy() {
         title="Consulting Services"
         lead="Specialized advisory practices led by seasoned professionals to engineer structural resilience and long-term value."
         crumbs={[{ label: 'Home', to: '/' }, { label: 'Consultancy' }]}
-        image={images.kuwait}
       />
 
       {/* Six Practices */}
@@ -95,7 +95,7 @@ export function Consultancy() {
             lead="Independent, objective frameworks tailored to institutional leaders, CFOs, and family holdings."
           />
 
-          <div className="mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <CardGrid className="mt-14">
             {practices.map((practice, idx) => {
               const Icon = practice.icon;
               return (
@@ -114,7 +114,7 @@ export function Consultancy() {
                 </Reveal>
               );
             })}
-          </div>
+          </CardGrid>
         </div>
       </section>
 
@@ -130,7 +130,7 @@ export function Consultancy() {
             </p>
           </div>
 
-          <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <CardGrid columns={4} className="mt-14">
             {pillars.map((pillar, idx) => {
               const Icon = pillar.icon;
               return (
@@ -149,7 +149,7 @@ export function Consultancy() {
                 </Reveal>
               );
             })}
-          </div>
+          </CardGrid>
         </div>
       </section>
 

@@ -7,23 +7,27 @@ type LogoProps = {
   size?: 'sm' | 'md' | 'lg';
 };
 
+// Same lockup as the old hero logo: eagle, bold SOHWAZ, widely spaced gold
+// "FINANCIAL CONSULTANTS". md is for the header and footer, lg matches the old hero size.
 const sizes = {
-  sm: 'h-8 w-8',
-  md: 'h-11 w-11',
-  lg: 'h-16 w-16',
+  sm: { icon: 'h-9 w-9', gap: 'gap-2.5', text: 'text-[17px]', subtext: 'text-[7.5px]' },
+  md: { icon: 'h-12 w-12', gap: 'gap-3', text: 'text-[22px]', subtext: 'text-[9.5px]' },
+  lg: { icon: 'h-16 w-16', gap: 'gap-4', text: 'text-3xl', subtext: 'text-[12px]' },
 };
 
 export function Logo({ onDark = false, showWordmark = true, size = 'md' }: LogoProps) {
+  const s = sizes[size];
   return (
-    <span className="inline-flex items-center gap-3">
+    <span className={`inline-flex items-center ${s.gap}`}>
       <span
-        className={`${sizes[size]} relative shrink-0 overflow-hidden rounded-lg ${
-          onDark ? 'bg-white/10 p-0.5' : 'bg-transparent'
+        className={`${s.icon} relative shrink-0 ${
+          // The eagle is black, so on dark backgrounds it sits on a white badge.
+          onDark ? 'overflow-hidden rounded-lg bg-white p-1.5 shadow-sm' : ''
         }`}
       >
         <Image
-          width={120}
-          height={120}
+          width={128}
+          height={128}
           src="/assets/eagle-logo.png"
           alt="Sohwaz Financial Consultants"
           priority
@@ -31,13 +35,17 @@ export function Logo({ onDark = false, showWordmark = true, size = 'md' }: LogoP
         />
       </span>
       {showWordmark && (
-        <span className={`font-display leading-none ${onDark ? 'text-white' : 'text-ink-950'}`}>
-          <span className="block text-[18px] font-extrabold tracking-[0.02em] md:text-[20px]">
+        <span className="font-display leading-tight">
+          <span
+            className={`block font-extrabold tracking-wide ${s.text} ${
+              onDark ? 'text-white' : 'text-ink-950'
+            }`}
+          >
             SOHWAZ
           </span>
           <span
-            className={`mt-1 block text-[9.5px] font-bold uppercase tracking-[0.16em] md:text-[10px] ${
-              onDark ? 'text-gold-300' : 'text-ink-700'
+            className={`block font-bold uppercase tracking-[0.24em] ${s.subtext} ${
+              onDark ? 'text-gold-300' : 'text-gold-700'
             }`}
           >
             Financial Consultants
