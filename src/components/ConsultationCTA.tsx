@@ -24,7 +24,7 @@ export function ConsultationCTA({
               </div>
               <div className="flex flex-col gap-4 lg:col-span-4 lg:items-end lg:justify-center">
                 <Button href="/contact" size="lg">
-                  Request a consultation
+                  Request a Consultation
                 </Button>
               </div>
             </div>

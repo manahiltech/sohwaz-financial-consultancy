@@ -2,7 +2,6 @@ import React from 'react';
 import Link from 'next/link';
 import { MailIcon } from 'lucide-react';
 import { Logo } from './Logo';
-import { LinkedInIcon } from './LinkedInIcon';
 import { contactDetails } from '../data/navigation';
 
 const mainLinks = [
@@ -27,7 +26,7 @@ export function Footer() {
           <div className="lg:col-span-5">
             <Logo onDark />
             <p className="mt-6 max-w-md text-[15px] leading-relaxed text-white/65">
-              Independent financial and investment advisory across Treasury, Asset-Liability Management, Debt Restructuring, Real Estate, HR, and IT for corporates, institutions, and investors in the Middle East and Pakistan.
+              Independent financial and investment advisory across Treasury, ALM, ALCO, Credit & Restructuring, Real Estate, and Governance, Risk & Compliance for corporates, institutions, and investors in the Middle East and Pakistan.
             </p>
             <ul className="mt-8 space-y-3 text-sm text-white/80">
               <li className="flex items-center gap-3">
@@ -94,17 +93,6 @@ export function Footer() {
             <p className="text-[13px] text-white/55">
               © 2026 Sohwaz Financial Consultants. All rights reserved.
             </p>
-            <div className="flex items-center gap-4">
-              <a
-                href={contactDetails.linkedin}
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Sohwaz Financial Consultants on LinkedIn"
-                className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/15 text-white/75 transition-colors duration-150 hover:border-gold-400 hover:text-gold-300"
-              >
-                <LinkedInIcon className="h-4 w-4" />
-              </a>
-            </div>
           </div>
         </div>
       </div>

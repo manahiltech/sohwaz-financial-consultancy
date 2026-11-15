@@ -12,6 +12,7 @@ import {
   CompassIcon,
 } from 'lucide-react';
 import { images } from '../data/images';
+import { CardGrid } from '../components/CardGrid';
 
 export function About() {
   return (
@@ -20,7 +21,6 @@ export function About() {
         title="About Us"
         lead="Strategic financial and investment advisory led by seasoned executive leadership."
         crumbs={[{ label: 'Home', to: '/' }, { label: 'About Us' }]}
-        image={images.architecture}
       />
 
       {/* Executive Profile Section */}
@@ -83,96 +83,125 @@ export function About() {
             lead="Proven executive execution across tier-1 financial institutions, sovereign wealth entities, and large-scale energy infrastructure."
           />
 
-          <div className="mt-14 grid gap-8 lg:grid-cols-3">
-            {/* Sector 1: Banking & Financial Institutions */}
-            <Reveal className="h-full rounded-2xl border border-line bg-white p-8 shadow-soft">
-              <div className="flex items-center gap-3">
+          <div className="mt-14 space-y-16">
+            <section aria-labelledby="banking-sector">
+              <div className="flex flex-wrap items-center gap-3 border-b border-line pb-4">
                 <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gold-100 text-gold-700">
                   <LandmarkIcon className="h-6 w-6" />
                 </span>
-                <h3 className="font-display text-xl font-bold text-ink-950">
+                <h3 id="banking-sector" className="font-display text-xl font-bold text-ink-950">
                   Banking & Financial Institutions
                 </h3>
               </div>
-              <ul className="mt-6 space-y-4 divide-y divide-line text-[14px] leading-relaxed text-muted">
-                <li className="pt-2">
-                  <strong className="block font-semibold text-ink-950">
-                    Treasury & Asset-Liability Management:
-                  </strong>
-                  Directed Treasury operations, optimized Asset-Liability Committee (ALCO) strategies, and managed asset-liability frameworks (ALM) for regional commercial, investment, and tier-1 sovereign banking institutions.
-                </li>
-                <li className="pt-4">
-                  <strong className="block font-semibold text-ink-950">
-                    Financial Institutions Group (FIG) & Capital Markets:
-                  </strong>
-                  Spearheaded institutional relationships, structured cross-border financial transactions, and executed sophisticated capital markets initiatives across the GCC.
-                </li>
-                <li className="pt-4">
-                  <strong className="block font-semibold text-ink-950">
-                    Regulatory Alignment & GRC:
-                  </strong>
-                  Designed and implemented proportionate Governance, Risk, and Compliance (GRC) frameworks that successfully bridged international standards with Central Bank requirements, adhering strictly to <strong className="font-medium text-ink-900">CBK (Kuwait), QCB (Qatar), and CBB (Bahrain)</strong> guidelines.
-                </li>
-                <li className="pt-4">
-                  <strong className="block font-semibold text-ink-950">
-                    Islamic Finance Integration:
-                  </strong>
-                  Navigated and managed Sharia-compliant banking operations, ensuring seamless execution within the region&apos;s dual-banking systems.
-                </li>
-              </ul>
-            </Reveal>
+              <div className="mt-6 flex flex-wrap items-stretch justify-center gap-6">
+                <Reveal className="basis-full min-w-0 sm:max-w-[calc(50%-1.5rem)] lg:max-w-[calc(25%-2.25rem)]">
+                  <article className="flex h-full flex-col rounded-2xl border border-line bg-white p-7 shadow-soft">
+                    <strong className="font-display text-base font-bold text-ink-950">
+                      Treasury & Asset-Liability Management:
+                    </strong>
+                    <p className="mt-3 flex-1 text-[14px] leading-relaxed text-muted">
+                      Directed Treasury operations, optimized Asset-Liability Committee (ALCO) strategies, and managed asset-liability frameworks (ALM) for regional commercial, investment, and tier-1 sovereign banking institutions.
+                    </p>
+                  </article>
+                </Reveal>
+                <Reveal delay={0.04} className="basis-full min-w-0 sm:max-w-[calc(50%-1.5rem)] lg:max-w-[calc(25%-2.25rem)]">
+                  <article className="flex h-full flex-col rounded-2xl border border-line bg-white p-7 shadow-soft">
+                    <strong className="font-display text-base font-bold text-ink-950">
+                      Financial Institutions Group (FIG) & Capital Markets:
+                    </strong>
+                    <p className="mt-3 flex-1 text-[14px] leading-relaxed text-muted">
+                      Spearheaded institutional relationships, structured cross-border financial transactions, and executed sophisticated capital markets initiatives across the GCC.
+                    </p>
+                  </article>
+                </Reveal>
+                <Reveal delay={0.08} className="basis-full min-w-0 sm:max-w-[calc(50%-1.5rem)] lg:max-w-[calc(25%-2.25rem)]">
+                  <article className="flex h-full flex-col rounded-2xl border border-line bg-white p-7 shadow-soft">
+                    <strong className="font-display text-base font-bold text-ink-950">
+                      Regulatory Alignment & GRC:
+                    </strong>
+                    <p className="mt-3 flex-1 text-[14px] leading-relaxed text-muted">
+                      Designed and implemented proportionate Governance, Risk, and Compliance (GRC) frameworks that successfully bridged international standards with Central Bank requirements, adhering strictly to <strong className="font-medium text-ink-900">CBK (Kuwait), QCB (Qatar), and CBB (Bahrain)</strong> guidelines.
+                    </p>
+                  </article>
+                </Reveal>
+                <Reveal delay={0.12} className="basis-full min-w-0 sm:max-w-[calc(50%-1.5rem)] lg:max-w-[calc(25%-2.25rem)]">
+                  <article className="flex h-full flex-col rounded-2xl border border-line bg-white p-7 shadow-soft">
+                    <strong className="font-display text-base font-bold text-ink-950">
+                      Islamic Finance Integration:
+                    </strong>
+                    <p className="mt-3 flex-1 text-[14px] leading-relaxed text-muted">
+                      Navigated and managed Sharia-compliant banking operations, ensuring seamless execution within the region&apos;s dual-banking systems.
+                    </p>
+                  </article>
+                </Reveal>
+              </div>
+            </section>
 
-            {/* Sector 2: Investment Firms & Sovereign Wealth */}
-            <Reveal delay={0.06} className="h-full rounded-2xl border border-line bg-white p-8 shadow-soft">
-              <div className="flex items-center gap-3">
+            <section aria-labelledby="investment-sector">
+              <div className="flex flex-wrap items-center gap-3 border-b border-line pb-4">
                 <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gold-100 text-gold-700">
                   <BriefcaseIcon className="h-6 w-6" />
                 </span>
-                <h3 className="font-display text-xl font-bold text-ink-950">
+                <h3 id="investment-sector" className="font-display text-xl font-bold text-ink-950">
                   Investment Firms & Sovereign Wealth
                 </h3>
               </div>
-              <ul className="mt-6 space-y-4 divide-y divide-line text-[14px] leading-relaxed text-muted">
-                <li className="pt-2">
-                  <strong className="block font-semibold text-ink-950">
-                    Institutional Portfolio Advisory:
-                  </strong>
-                  Provided non-discretionary portfolio management, advanced risk analytics, and strategic asset allocation models for prominent regional investment companies and family offices.
-                </li>
-                <li className="pt-4">
-                  <strong className="block font-semibold text-ink-950">
-                    Real Estate Underwriting:
-                  </strong>
-                  Delivered rigorous, independent financial assessments and risk underwriting for high-value acquisitions and income-producing portfolios across regional and international property markets.
-                </li>
-              </ul>
-            </Reveal>
+              <div className="mt-6 flex flex-wrap items-stretch justify-center gap-6">
+                <Reveal className="basis-full min-w-0 sm:max-w-[calc(50%-1.5rem)] lg:max-w-[calc(50%-1.5rem)]">
+                  <article className="flex h-full flex-col rounded-2xl border border-line bg-white p-7 shadow-soft">
+                    <strong className="font-display text-base font-bold text-ink-950">
+                      Institutional Portfolio Advisory:
+                    </strong>
+                    <p className="mt-3 flex-1 text-[14px] leading-relaxed text-muted">
+                      Provided non-discretionary portfolio management, advanced risk analytics, and strategic asset allocation models for prominent regional investment companies and family offices.
+                    </p>
+                  </article>
+                </Reveal>
+                <Reveal delay={0.04} className="basis-full min-w-0 sm:max-w-[calc(50%-1.5rem)] lg:max-w-[calc(50%-1.5rem)]">
+                  <article className="flex h-full flex-col rounded-2xl border border-line bg-white p-7 shadow-soft">
+                    <strong className="font-display text-base font-bold text-ink-950">
+                      Real Estate Underwriting:
+                    </strong>
+                    <p className="mt-3 flex-1 text-[14px] leading-relaxed text-muted">
+                      Delivered rigorous, independent financial assessments and risk underwriting for high-value acquisitions and income-producing portfolios across regional and international property markets.
+                    </p>
+                  </article>
+                </Reveal>
+              </div>
+            </section>
 
-            {/* Sector 3: Oil & Gas (Energy Infrastructure) */}
-            <Reveal delay={0.12} className="h-full rounded-2xl border border-line bg-white p-8 shadow-soft">
-              <div className="flex items-center gap-3">
+            <section aria-labelledby="energy-sector">
+              <div className="flex flex-wrap items-center gap-3 border-b border-line pb-4">
                 <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gold-100 text-gold-700">
                   <FlameIcon className="h-6 w-6" />
                 </span>
-                <h3 className="font-display text-xl font-bold text-ink-950">
+                <h3 id="energy-sector" className="font-display text-xl font-bold text-ink-950">
                   Oil & Gas (Energy Infrastructure)
                 </h3>
               </div>
-              <ul className="mt-6 space-y-4 divide-y divide-line text-[14px] leading-relaxed text-muted">
-                <li className="pt-2">
-                  <strong className="block font-semibold text-ink-950">
-                    CFO Leadership & Capital Advisory:
-                  </strong>
-                  Served as the <strong className="font-medium text-ink-900">Chief Financial Officer (CFO) for a leading oil and gas company in Kuwait</strong>, providing corporate financial governance, strategic leadership, and sophisticated CapEx optimization for large-scale energy infrastructure.
-                </li>
-                <li className="pt-4">
-                  <strong className="block font-semibold text-ink-950">
-                    Margin & Revenue Engineering:
-                  </strong>
-                  Deploying commodity risk-mitigation strategies, orchestrating corporate restructurings, and leading high-stakes lender negotiations to maximize profitability.
-                </li>
-              </ul>
-            </Reveal>
+              <div className="mt-6 flex flex-wrap items-stretch justify-center gap-6">
+                <Reveal className="basis-full min-w-0 sm:max-w-[calc(50%-1.5rem)] lg:max-w-[calc(50%-1.5rem)]">
+                  <article className="flex h-full flex-col rounded-2xl border border-line bg-white p-7 shadow-soft">
+                    <strong className="font-display text-base font-bold text-ink-950">
+                      CFO Leadership & Capital Advisory:
+                    </strong>
+                    <p className="mt-3 flex-1 text-[14px] leading-relaxed text-muted">
+                      Served as the <strong className="font-medium text-ink-900">Chief Financial Officer (CFO) for a leading oil and gas company in Kuwait</strong>, providing corporate financial governance, strategic leadership, and sophisticated CapEx optimization for large-scale energy infrastructure.
+                    </p>
+                  </article>
+                </Reveal>
+                <Reveal delay={0.04} className="basis-full min-w-0 sm:max-w-[calc(50%-1.5rem)] lg:max-w-[calc(50%-1.5rem)]">
+                  <article className="flex h-full flex-col rounded-2xl border border-line bg-white p-7 shadow-soft">
+                    <strong className="font-display text-base font-bold text-ink-950">
+                      Margin & Revenue Engineering:
+                    </strong>
+                    <p className="mt-3 flex-1 text-[14px] leading-relaxed text-muted">
+                      Deploying commodity risk-mitigation strategies, orchestrating corporate restructurings, and leading high-stakes lender negotiations to maximize profitability.
+                    </p>
+                  </article>
+                </Reveal>
+              </div>
+            </section>
           </div>
         </div>
       </section>
@@ -186,7 +215,7 @@ export function About() {
             lead="Guiding standards that govern every advisory mandate and institutional client relationship."
           />
 
-          <div className="mt-14 grid gap-8 md:grid-cols-2">
+          <CardGrid columns={2} className="mt-14">
             <Reveal className="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur md:p-10">
               <div className="flex items-center gap-3">
                 <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold-400/20 text-gold-300">
@@ -211,10 +240,10 @@ export function About() {
                 </h3>
               </div>
               <p className="mt-6 text-[16px] leading-relaxed text-white/75">
-                We eliminate operational ambiguity by delivering plain-language financial assessments and transparent risk analysis. While we provide the strategic blueprints, <strong className="font-semibold text-white">all ultimate corporate decisions and implementation actions rest solely with the Client</strong>. Our advisory services constitute guidance only, and execution carries no legal or financial recourse to our firm, its advisors, or its entities.
+                We eliminate operational ambiguity by delivering plain-language financial assessments and transparent risk analysis. While we provide the strategic blueprints, <strong className="font-semibold text-white">all ultimate corporate decisions and implementation actions rest solely with the Client</strong>.                 Our advisory services constitute guidance only, and execution carries no legal or financial recourse to our firm, its advisors, or its entities.
               </p>
             </Reveal>
-          </div>
+          </CardGrid>
         </div>
       </section>
 

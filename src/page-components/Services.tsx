@@ -4,7 +4,7 @@ import { SectionHeading } from '../components/SectionHeading';
 import { ConsultationCTA } from '../components/ConsultationCTA';
 import { Reveal } from '../components/Reveal';
 import { CheckCircle2Icon, ShieldCheckIcon, LandmarkIcon, Building2Icon, LayersIcon } from 'lucide-react';
-import { images } from '../data/images';
+import { CardGrid } from '../components/CardGrid';
 
 export function Services() {
   return (
@@ -13,7 +13,6 @@ export function Services() {
         title="Services"
         lead="Specialized, expert-led advisory services across the Middle East and Pakistan."
         crumbs={[{ label: 'Home', to: '/' }, { label: 'Services' }]}
-        image={images.dubai}
       />
 
       {/* Intro Section */}
@@ -38,7 +37,7 @@ export function Services() {
             lead="Disciplined, institutional-grade solutions structured around corporate resilience and strategic execution."
           />
 
-          <div className="mt-14 grid gap-10 lg:grid-cols-2">
+          <CardGrid columns={2} className="mt-14">
             {/* Group 1: Capital, Liquidity & Governance */}
             <Reveal className="rounded-2xl border border-line bg-white p-8 shadow-soft md:p-10">
               <div className="flex items-center gap-3">
@@ -129,7 +128,7 @@ export function Services() {
                 </div>
               </div>
             </Reveal>
-          </div>
+          </CardGrid>
         </div>
       </section>
 
@@ -141,14 +140,14 @@ export function Services() {
             lead="Our greatest asset is our people. Every engagement is led by highly qualified specialists who bring elite credentials and field experience."
           />
 
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
+          <CardGrid className="mt-12">
             <Reveal delay={0.02} className="h-full rounded-2xl border border-line bg-mist/60 p-8">
               <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold-400/20 text-gold-700">
                 <ShieldCheckIcon className="h-6 w-6" />
               </span>
-              <h4 className="mt-6 font-display text-lg font-bold text-ink-950">
+              <h3 className="mt-6 font-display text-lg font-bold text-ink-950">
                 Global Designations
-              </h4>
+              </h3>
               <p className="mt-3 text-[15px] leading-relaxed text-muted">
                 Top-tier global professional designations spanning banking, risk management, human resources, and technology.
               </p>
@@ -158,9 +157,9 @@ export function Services() {
               <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold-400/20 text-gold-700">
                 <CheckCircle2Icon className="h-6 w-6" />
               </span>
-              <h4 className="mt-6 font-display text-lg font-bold text-ink-950">
+              <h3 className="mt-6 font-display text-lg font-bold text-ink-950">
                 Canadian & Global Academics
-              </h4>
+              </h3>
               <p className="mt-3 text-[15px] leading-relaxed text-muted">
                 Academic and technical qualifications from internationally renowned, highly rated Canadian institutions and elite global programs.
               </p>
@@ -170,14 +169,14 @@ export function Services() {
               <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold-400/20 text-gold-700">
                 <LayersIcon className="h-6 w-6" />
               </span>
-              <h4 className="mt-6 font-display text-lg font-bold text-ink-950">
+              <h3 className="mt-6 font-display text-lg font-bold text-ink-950">
                 On-The-Ground Execution
-              </h4>
+              </h3>
               <p className="mt-3 text-[15px] leading-relaxed text-muted">
                 Diversified, hands-on experience in competitive international financial markets with on-the-ground execution knowledge in the Middle East and Pakistan.
               </p>
             </Reveal>
-          </div>
+          </CardGrid>
         </div>
       </section>
 

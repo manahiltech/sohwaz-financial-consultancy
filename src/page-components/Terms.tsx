@@ -19,14 +19,6 @@ export function Terms() {
               Contents
             </p>
             <ol className="mt-4 space-y-2 border-l border-line text-sm">
-              <li>
-                <a
-                  href="#overview"
-                  className="-ml-px block border-l-2 border-transparent py-1 pl-4 text-muted hover:border-gold-400 hover:text-ink-950"
-                >
-                  Overview & Acceptance
-                </a>
-              </li>
               {termsSections.map((s) => (
                 <li key={s.id}>
                   <a

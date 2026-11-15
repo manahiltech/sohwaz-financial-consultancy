@@ -14,9 +14,4 @@ export const contactDetails = {
   email: 'enquiries@sohwaz.com',
   secondaryEmail: 'sohwazfincons@gmail.com',
   emails: ['enquiries@sohwaz.com', 'sohwazfincons@gmail.com'],
-  hours: [
-    { days: 'Monday – Friday', time: 'Open' },
-    { days: 'Saturday - Sunday', time: 'Closed' },
-  ],
-  linkedin: 'https://www.linkedin.com/in/sohwaz-holdings-08aa03237/',
 };
