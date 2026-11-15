@@ -101,6 +101,9 @@ export function Header() {
 
           <div className="flex items-center gap-4">
             {/* Desktop only: on smaller screens this button lives inside the menu */}
+            <Button href="/contact" size="sm" className="hidden! lg:inline-flex">
+              Request a Consultation
+            </Button>
             <button
               type="button"
               onClick={() => setMobileOpen((o) => !o)}
