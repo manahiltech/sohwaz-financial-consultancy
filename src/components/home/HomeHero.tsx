@@ -62,7 +62,7 @@ export function HomeHero() {
         {/* Right Column: The 3D Rotating Earth Globe with Orbiting Currencies */}
         <motion.div
           {...enter(0.22)}
-          className="relative hidden lg:block lg:col-span-6 xl:col-span-6 min-h-[320px] sm:min-h-[400px] lg:min-h-[420px]"
+          className="relative lg:col-span-6 xl:col-span-6 min-h-[320px] sm:min-h-[400px] lg:min-h-[420px]"
         >
           <HeroGlobe />
         </motion.div>
